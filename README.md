@@ -1,2 +1,12 @@
 # color-sort-game
-Generate color / Lerp color / Sort color by HSL
+Lerp color by HSL / Shuffle color / Sort color  <br>
+
+Run colorGenerator(total1, total2) to reset the color array. <br>
+
+The length of color array equals to (total1 + total2 - 1). <br>
+
+游戏通过执行colorGenerator(total1, total2)来重置颜色，<br>
+参数total1，total2决定了颜色的数量：(total1 + total2 - 1)。
+
+
+
