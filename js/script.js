@@ -1,5 +1,5 @@
 $(function() {
-  colorGenerator(3, 3);
+  colorGenerator(4, 4);
 })
 
 var lerpHSL = function(colorA, colorB, alpha){
