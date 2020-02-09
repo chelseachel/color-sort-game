@@ -1,5 +1,6 @@
 # color-sort-game
-Lerp color by HSL / Shuffle color / Sort color  <br>
+Lerp color by HSL / Shuffle color / Sort color / Checkwin <br>
+![demo](./demo.png)
 
 Run colorGenerator (total1, total2) to reset the color array. <br>
 The length of color array equals to (total1 + total2 - 1). <br>
