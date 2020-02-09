@@ -1,4 +1,4 @@
-# color-sort-game
+# Color Sort Game
 Lerp color by HSL / Shuffle color / Sort color / Checkwin <br>
 ![demo](./demo.png)
 
