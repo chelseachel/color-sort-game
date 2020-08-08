@@ -1,6 +1,12 @@
 $(function() {
-  colorGenerator(4, 4);
+  colorGenerator(6, 4);
 })
+
+$('button').click(function() {
+  $('#game').empty();
+  $('#result').css('display','none');
+  colorGenerator(6, 4);
+});
 
 var lerpHSL = function(colorA, colorB, alpha){
   var h1 = colorA.getHSL().h;
@@ -45,12 +51,7 @@ var colorGenerator = function(total1, total2){
   var colorASatuation = colorA.getHSL().s;
   var colorALightness = colorA.getHSL().l;
   var colorB = new THREE.Color();
-  var colorBHue;
-  if(colorAHue < 0.5) {
-    colorBHue = colorAHue + 0.5;
-  } else {
-    colorBHue = colorAHue - 0.5;
-  } 
+  var colorBHue = colorAHue < 0.5 ? colorAHue + 0.5 : colorAHue - 0.5;
   
   colorB.setHSL(colorBHue, colorASatuation, colorALightness);
   
@@ -89,16 +90,16 @@ var colorGenerator = function(total1, total2){
 var checkwin = function(colorArray) {
   var win = true;
   $('#game div').each(function(i){
-    console.log($(this).attr('data'));
-    console.log(colorArray[i].getHex());
+    // console.log($(this).attr('data'));
+    // console.log(colorArray[i].getHex());
     if ($(this).attr('data') != colorArray[i].getHex()) {
       win = false;
     }
   })
   var reversewin = true;
   $('#game div').each(function(i){
-    console.log($(this).attr('data'));
-    console.log(colorArray[i].getHex());
+    // console.log($(this).attr('data'));
+    // console.log(colorArray[i].getHex());
     var length = colorArray.length;
     var j = length - i - 1;
     if ($(this).attr('data') != colorArray[j].getHex()) {
@@ -106,6 +107,6 @@ var checkwin = function(colorArray) {
     }
   })
   if (win || reversewin){
-    alert('You win!');
+    $('#result').slideDown(300);
   }
 }
